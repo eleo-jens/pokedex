@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ListePokeComponent } from './components/liste-poke/liste-poke.component'
+import { ActivatedRoute } from '@angular/router';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListePokeComponent
+    ListePokeComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

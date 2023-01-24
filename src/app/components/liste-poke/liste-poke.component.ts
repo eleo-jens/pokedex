@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { pokemonListItem } from 'src/app/models/pokemonListItem.model';
 import { PokeApiService } from 'src/app/services/poke-api.service';
@@ -16,7 +17,7 @@ export class ListePokeComponent implements OnInit {
   item : pokemonListItem; 
   // pokemon : Pokemon;
 
-  constructor(private _pokeApi : PokeApiService) { }
+  constructor(private _pokeApi : PokeApiService, private _route : Router) { }
 
   ngOnInit(): void {
     this._pokeApi.getAll("0").subscribe({
@@ -48,4 +49,8 @@ export class ListePokeComponent implements OnInit {
     })
   }
 
+  goToDetail(id){
+    console.log(id)
+    this._route.navigate(['Detail/' + id]);
+  }
 }
