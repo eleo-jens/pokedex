@@ -1,0 +1,12 @@
+<div class="card-group">
+    <div *ngFor="let pokemon of listeAfter" class="pokemon">
+        <div class="card">
+            <img src="{{pokemon.Svg}}" class="card-img-top" alt="{{pokemon.Name}}">
+            <div class="card-body">
+              <h5 class="card-title">{{pokemon.Name | uppercase}}</h5>
+              <p class="card-text">N° {{pokemon.Id}}</p>
+              <a href="#" class="btn btn-primary">Détails</a>
+            </div>
+          </div>
+    </div>
+</div>
